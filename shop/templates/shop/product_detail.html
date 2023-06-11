@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.title }}</title>
+</head>
+<body>
+
+<h1>{{ product.title}}</h1><br>
+<a href="{% url 'category' category_id=product.cat_id %}">{{ product.cat}}</a><br>
+{{ product.text}}<br>
+{{ product.price}} руб<br>
+
+<p>
+    <a href="{% url 'add_to_basket' product_id=product.id %}"> Add to cart </a>
+    <a href="{% url 'show_basket' %}"> See your cart </a>
+</p>
+
+
+<p><a href="{% url 'delete_product' product_id=product.id %}"> Delete product </a></p>
+<p><a href="{% url 'home' %}"> Main page </a></p>
+</body>
+</html>

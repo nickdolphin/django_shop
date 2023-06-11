@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ category }}</title>
+</head>
+<body>
+
+<h1>{{ category }}</h1>
+{% for prod in products %}
+    <p>
+    <a href="{% url 'product_detail' product_id=prod.pk%}">{{ prod.title }}</a><br>
+    {{ prod.price }} $<br>
+    </p>
+{% endfor %}
+
+<p><a href="{% url 'home' %}"> Main page </a></p>
+</body>
+</html>

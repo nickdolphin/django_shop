@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+
+<h1> (Products: {{ product.count }})</h1>
+{% for i in product %}
+    {{ i }} ({{ i.price }}р.) <a href="{% url 'delete_from_basket' product_id=i.id %}"> Remove </a><br>
+{% endfor %}
+
+<p> Total price: {{ final_price }}</p>
+
+<p><a href="{% url 'order' %}"> Make your order </a></p>
+
+<p><a href="{% url 'clear_basket' %}"> Remove all </a></p>
+
+<p><a href="{% url 'home' %}"> Back to main </a></p>
+</body>
+</html>
