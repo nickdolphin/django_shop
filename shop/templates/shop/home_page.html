@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<h1> My shop </h1>
+{% for i in category %}
+<h2>{{ i }}</h2>
+    {% for prod in i.product_set.all %}
+        <li><a href="{% url 'product_detail' product_id=prod.pk %}">{{ prod }}</a></li>
+    {% endfor %}
+{% endfor %}
+
+{{popular_product}}
+
+<h3><i><a href="{% url 'add_product' %}"> Add product </a></i></h3>
+
+</body>
+</html>
